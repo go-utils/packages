@@ -1,7 +1,6 @@
 package gopackages
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -42,7 +41,7 @@ func GetGoModPath(in string) (string, error) {
 
 // GetGoModule - Get the Go root package name from go.mod
 func GetGoModule(goMod string) (string, error) {
-	d, err := ioutil.ReadFile(goMod)
+	d, err := os.ReadFile(goMod)
 	if err != nil {
 		return "", xerrors.Errorf("error in ioutil ReadFile method: %w", err)
 	}
