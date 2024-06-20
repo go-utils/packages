@@ -95,6 +95,22 @@ func TestGetGoModule(t *testing.T) {
 			wantErr: false,
 		},
 		{
+			name: "success",
+			args: args{
+				goMod: "./go-1.14.go.mod",
+			},
+			want:    "github.com/go-utils/gopackages",
+			wantErr: false,
+		},
+		{
+			name: "success",
+			args: args{
+				goMod: "./go-1.22.3.go.mod",
+			},
+			want:    "github.com/go-utils/gopackages",
+			wantErr: false,
+		},
+		{
 			name: "failure",
 			args: args{
 				goMod: "../go.sum",
